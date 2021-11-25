@@ -1,5 +1,14 @@
-# react-signup-verification-boilerplate
+# React Assessment Front-end
 
-React - Email Sign Up with Verification, Authentication & Forgot Password
+### To run with docker
+```
+docker build --tag=react-front-end:latest .
+docker run -p8080:8080 front-end:latest
+```
+### To Build
 
-For documentation and a live demo see https://jasonwatmore.com/post/2020/04/22/react-email-sign-up-with-verification-authentication-forgot-password
+```
+npm clean   
+npm install
+npm start
+```
