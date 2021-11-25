@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
@@ -7,27 +6,25 @@ import { accountService, alertService } from '@/_services';
 
 function Login({ history, location }) {
     const initialValues = {
-        email: '',
+        username: '',
         password: ''
     };
 
     const validationSchema = Yup.object().shape({
-        email: Yup.string()
-            .email('Email is invalid')
-            .required('Email is required'),
+        username: Yup.string().required('Username is required'),
         password: Yup.string().required('Password is required')
     });
 
-    function onSubmit({ email, password }, { setSubmitting }) {
+    function onSubmit({ username, password }, { setSubmitting }) {
         alertService.clear();
-        accountService.login(email, password)
+        accountService.login(username, password)
             .then(() => {
-                const { from } = location.state || { from: { pathname: "/" } };
-                history.push(from);
+                history.push("/deliveries");
             })
             .catch(error => {
                 setSubmitting(false);
-                alertService.error(error);
+                alertService.clear();
+                alertService.error("Username or password is incorrect");
             });
     }
 
@@ -38,9 +35,9 @@ function Login({ history, location }) {
                     <h3 className="card-header">Login</h3>
                     <div className="card-body">
                         <div className="form-group">
-                            <label>Email</label>
-                            <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
-                            <ErrorMessage name="email" component="div" className="invalid-feedback" />
+                            <label>Username</label>
+                            <Field name="username" type="text" className={'form-control' + (errors.username && touched.username ? ' is-invalid' : '')} />
+                            <ErrorMessage name="username" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-group">
                             <label>Password</label>
@@ -53,11 +50,7 @@ function Login({ history, location }) {
                                     {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
                                     Login
                                 </button>
-                                <Link to="register" className="btn btn-link">Register</Link>
-                            </div>
-                            <div className="form-group col text-right">
-                                <Link to="forgot-password" className="btn btn-link pr-0">Forgot Password?</Link>
-                            </div>
+                            </div>            
                         </div>
                     </div>
                 </Form>
