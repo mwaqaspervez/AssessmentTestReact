@@ -6,7 +6,6 @@ import { Account } from '@/account';
 import { Table } from '@/deliveries';
 
 function App() {
-
     return (
         <div>
             <Alert />
