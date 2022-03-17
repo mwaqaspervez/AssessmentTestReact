@@ -1,12 +1,10 @@
-import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-
-import { accountService } from '@/_services';
+import { useAppSelector } from '../redux/rootReducer';
 
 function PrivateRoute({ component: Component, roles, ...rest }) {
     return (
         <Route {...rest} render={props => {
-            const user = accountService.userValue;
+            const user = useAppSelector(state => state.loginReducer.user)
             if (!user) {
                 // not logged in so redirect to login page with the return url
                 return <Redirect to={{ pathname: '/account/login', state: { from: props.location } }} />

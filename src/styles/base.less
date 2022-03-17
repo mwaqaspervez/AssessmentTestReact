@@ -1,0 +1,172 @@
+// basic styles
+.centered-align {
+    text-align: center;
+  }
+  .green {
+    color: #03ab2c;
+  }
+  .red {
+    color: #ee0202;
+  }
+  .fw-500 {
+    font-weight: 500;
+  }
+  .mb-25 {
+    margin-bottom: 25px;
+  }
+  .display-flex {
+    display: flex;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  
+  // Ant Design - Dropdown
+  .ant-dropdown-menu {
+    li {
+      span.ant-dropdown-menu-title-content {
+        display: flex;
+        align-items: center;
+        span {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  
+  .stats-wrap {
+    padding: 0 0 20px 0;
+  }
+  
+  // Ant Design - Icons
+  .anticon {
+    font-size: 16px;
+  }
+  .anticon-filter,
+  .anticon-search {
+    color: #bfbfbf;
+  }
+  .ant-table-filter-column {
+    .active {
+      .anticon-filter {
+        color: #03ab2c;
+      }
+    }
+  }
+  
+  // Ant Design - Table
+  .ant-table-thead > tr > th {
+    line-height: 12px;
+  }
+  .table-striped-rows {
+    tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+  }
+  .ant-table-content {
+    .ant-table-head tr th.ant-table-cell {
+      padding-top: 7px;
+      padding-bottom: 9px;
+    }
+  }
+  .ant-table-tbody {
+    tr td {
+      color: #979797;
+    }
+    .green-link {
+      color: #03ab2c;
+      cursor: pointer;
+    }
+    .light-bg-column {
+      background: rgba(196, 196, 196, 0.1);
+    }
+  }
+  
+  // Ant Design - Pagination
+  .pagination {
+    font-family: Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+      'Droid Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    right: 15px;
+    margin-top: 25px;
+    .ant-pagination {
+      .ant-pagination-item {
+        color: #797979;
+      }
+      .ant-pagination-item-active {
+        background-color: #03ab2c;
+        border-radius: 15px;
+        a {
+          font-size: 15px;
+          color: white;
+        }
+      }
+      .ant-pagination-next {
+        color: #03ab2c;
+      }
+    }
+  }
+  
+  // media queries:  for data tables
+  @media (min-width: 1600px) and (max-width: 1720px) {
+    .ant-table-container,
+    .tripsTableContainer {
+      .ant-table-thead th {
+        font-size: 14px;
+      }
+      .ant-table-tbody tr td {
+        font-size: 14px;
+      }
+    }
+  }
+  
+  @media (min-width: 1366px) and (max-width: 1600px) {
+    .ant-table-container,
+    .tripsTableContainer {
+      .ant-table-thead th {
+        font-size: 12px;
+      }
+      .ant-table-tbody tr td {
+        font-size: 12px;
+      }
+    }
+  }
+  
+  @media (min-width: 1280px) and (max-width: 1366px) {
+    .ant-table-container,
+    .tripsTableContainer {
+      .ant-table-thead th {
+        font-size: 12px;
+      }
+      .ant-table-tbody tr td {
+        font-size: 12px;
+      }
+    }
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    .tripsTableContainer {
+      .ant-table-thead th {
+        font-size: 10px;
+      }
+      .ant-table-tbody tr td {
+        font-size: 10px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .ant-table-container,
+    .tripsTableContainer {
+      .ant-table-thead th {
+        font-size: 8px;
+      }
+      .ant-table-tbody tr td {
+        font-size: 8px;
+      }
+    }
+  }
+  

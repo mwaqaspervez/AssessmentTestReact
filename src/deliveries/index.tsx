@@ -1,14 +1,12 @@
-import React from 'react';
 import { Route } from 'react-router-dom';
-import { DeliveryProducts } from './DeliveryProducts';
+import { DeliveryProducts } from './TicketDetailsComponent';
 
-
-function Table({ history, match }) {
+const TicketsContainer = () => {
 
     return (
         <div>
             <div className="delivery-detail">
-                <h1>Automated Generated Tickets</h1>
+                <h1 className='header-heading'>Automated Generated Tickets</h1>
             </div>
             <div>
                 <Route path="/" component={DeliveryProducts} />
@@ -17,4 +15,4 @@ function Table({ history, match }) {
     );
 }
 
-export { Table };
+export { TicketsContainer };
