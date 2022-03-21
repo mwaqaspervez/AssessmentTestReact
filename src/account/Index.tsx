@@ -1,4 +1,4 @@
-import { Login } from './Login';
+import { LoginContainer } from './LoginContainer';
 import { Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,7 +15,7 @@ function Account(): JSX.Element {
                     <div className="col-sm-8 offset-sm-2 mt-5">
                         <div className="card m-3">
                             <Route path="/">
-                                <Login />
+                                <LoginContainer />
                             </Route>
                         </div>
                     </div>

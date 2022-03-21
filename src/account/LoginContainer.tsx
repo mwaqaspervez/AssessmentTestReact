@@ -8,7 +8,7 @@ import { useAppSelector } from '../redux/rootReducer';
 import { toast } from 'react-toastify';
 import './Login.less';
 
-const Login = () => {
+const LoginContainer = () => {
     const dispatch = useDispatch();
     const { user: { isLoggedIn }, error } = useAppSelector(state => state.loginReducer);
     const history = useHistory();
@@ -33,6 +33,7 @@ const Login = () => {
 
     useEffect(() => {
         if (isLoggedIn) {
+            toast.success("Login Successfull")
             history.push("/tickets");
         }
         if (error) {
@@ -48,13 +49,12 @@ const Login = () => {
                         <h3 className="sign">Login</h3>
                         <div>
                             <div>
-                            <ErrorMessage name="username" component="div" className="invalid-feedback" />
-
-                                <Field placeholder="Username" name="username" type="text" className='pass' />
+                            <ErrorMessage data-testid="username_error" name="username" component="div" className="invalid-feedback" />
+                                <Field data-testid="Username" placeholder="Username" name="username" type="text" className='pass' />
                             </div>
                             <div>
-                            <ErrorMessage name="password" component="div" className="invalid-feedback" />
-                                <Field placeholder="Password" name="password" type="password" className='pass' />
+                            <ErrorMessage data-testid="password_error" name="password" component="div" className="invalid-feedback" />
+                                <Field data-testid="Password" placeholder="Password" name="password" type="password" className='pass' />
                                 
                             </div>
                             <div>
@@ -72,4 +72,4 @@ const Login = () => {
     )
 }
 
-export { Login }; 
+export { LoginContainer }; 
